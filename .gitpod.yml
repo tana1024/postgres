@@ -1,13 +1,7 @@
-services:
+image: gitpod/workspace-postgres
+tasks:
+  - init: yarn install
+    command: yarn build
 
-  db:
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_PASSWORD: example
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
+ports:
+  - port: 8000
